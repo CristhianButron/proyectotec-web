@@ -1,0 +1,35 @@
+version: '3.8'
+services:
+  express-app:
+    build: 
+      context: .
+      dockerfile: Dockerfile
+    container_name: express_server
+    ports:
+      - "3000:3000"
+    environment:
+      - NODE_ENV=development
+      - DB_HOST=postgres-db
+      - DB_USER=postgres
+      - DB_PASSWORD=1234
+      - DB_NAME=sistema_innovacionempresarial
+    depends_on:
+      - postgres-db
+    command: >
+      npm run dev
+
+  postgres-db:
+    image: postgres:15
+    container_name: express_db
+    ports:
+      - "5432:5432"
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=1234
+      - POSTGRES_DB=sistema_innovacionempresarial
+    volumes:
+      - postgres-vol:/val/lib/postgresql/data
+
+volumes:
+  postgres-vol:
+
