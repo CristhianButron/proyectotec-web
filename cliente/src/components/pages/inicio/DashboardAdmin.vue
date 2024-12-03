@@ -28,7 +28,7 @@
           </router-link>
         </li>
         <li class="nav-item">
-          <router-link class="nav-link text-white" to="/GetForo">
+          <router-link class="nav-link text-white" to="/Foros-Start">
             <i class="bi bi-bar-chart"></i> Foros
           </router-link>
         </li>

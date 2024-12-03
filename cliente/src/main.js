@@ -17,6 +17,8 @@ import UsuariosEdit from "./components/pages/usuarios/UsuariosEdit";
 import ForoGet from "./components/pages/Foro/ForosPage.vue";
 import PostForo from "./components/pages/Foro/PostForo.vue";
 import ForosEdicion from "./components/pages/Foro/ForosEdicion.vue";
+import ForosIndex from "./components/pages/Foro/ForosIndex.vue";
+import index from "./components/pages/index.vue";
 
 axios.defaults.baseURL = process.env.VUE_APP_API_URL;
 /*axios.interceptors.request.use(function (config) {
@@ -28,6 +30,8 @@ const router = createRouter({
   history: createWebHistory(),
   routes: [
     { path: "/", component: DashboardAdmin },
+    { path: "/Inicio", component: index},
+    { path: "/Foros-Start", component: ForosIndex },
     { path: "/graduados/list", component: GraduadoList},
     { path: "/graduados/create", component: GraduadoCreate },
     { path: "/graduados/edit/:id", component: GraduadoEdit },
