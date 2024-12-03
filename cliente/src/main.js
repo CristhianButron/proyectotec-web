@@ -14,6 +14,13 @@ import DashboardAdmin from "./components/pages/inicio/DashboardAdmin";
 import UsuariosList from "./components/pages/usuarios/UsuariosList";
 import UsuariosCreate from "./components/pages/usuarios/UsuariosCreate";
 import UsuariosEdit from "./components/pages/usuarios/UsuariosEdit";
+import ForoGet from "./components/pages/Foro/ForosPage.vue";
+import PostForo from "./components/pages/Foro/PostForo.vue";
+import ForosEdicion from "./components/pages/Foro/ForosEdicion.vue";
+import ForosIndex from "./components/pages/Foro/ForosIndex.vue";
+import index from "./components/pages/index.vue";
+import PasantiasList from "./components/pages/admin/PasantiasList.vue";
+import UsuarioAlumnoForm from "./components/pages/admin/UserList.vue";
 
 axios.defaults.baseURL = process.env.VUE_APP_API_URL;
 /*axios.interceptors.request.use(function (config) {
@@ -25,6 +32,8 @@ const router = createRouter({
   history: createWebHistory(),
   routes: [
     { path: "/", component: DashboardAdmin },
+    { path: "/Inicio", component: index},
+    { path: "/Foros-Start", component: ForosIndex },
     { path: "/graduados/list", component: GraduadoList},
     { path: "/graduados/create", component: GraduadoCreate },
     { path: "/graduados/edit/:id", component: GraduadoEdit },
@@ -32,6 +41,11 @@ const router = createRouter({
     { path: "/usuarios/list", component: UsuariosList},
     { path: "/usuarios/create", component: UsuariosCreate},
     { path: "/usuarios/edit/:id", component: UsuariosEdit},
+    { path: "/GetForo", component: ForoGet},
+    { path: "/PostForo", component: PostForo},
+    { path: "/ForosEdit", component: ForosEdicion},
+    { path: "/ListaPas", component: PasantiasList},
+    { path: "/ListaUs", component: UsuarioAlumnoForm},
     // Nueva ruta para el DashboardAdmin
   ],
 });

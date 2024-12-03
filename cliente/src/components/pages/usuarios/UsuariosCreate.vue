@@ -198,7 +198,7 @@ export default {
           },
         };
 
-        const response = await axios.post('/api/v1/usuario/postUsuarios', userData);
+        const response = await axios.post('/api/usuario/postUsuarios', userData);
         console.log('Usuario creado:', response.data);
         Swal.fire('Éxito', 'Usuario creado correctamente', 'success');
       } catch (error) {

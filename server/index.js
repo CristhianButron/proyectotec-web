@@ -10,6 +10,7 @@ import inscripcionesForosRoutes from './router/inscripcionesForosRouter.js';
 import inscripcionesPasantiasRoutes from './router/inscripcionesPasantiasRouter.js';
 import graduadosRoutes from './router/graduadosRouter.js';
 import loginRoutes from './router/loginRouter.js';
+//import cors from 'cors';
 import { checkDatabaseConnection } from './config/database.js';
 
 
@@ -27,6 +28,9 @@ app.use('/api', inscripcionesForosRoutes);
 app.use('/api', inscripcionesPasantiasRoutes);
 app.use('/api', graduadosRoutes);
 app.use('/api', loginRoutes);
+
+
+app.use(cors());
 // Usa las rutas de alumno
 app.use('/', swaggerApp);
 
