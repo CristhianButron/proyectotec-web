@@ -19,6 +19,8 @@ import PostForo from "./components/pages/Foro/PostForo.vue";
 import ForosEdicion from "./components/pages/Foro/ForosEdicion.vue";
 import ForosIndex from "./components/pages/Foro/ForosIndex.vue";
 import index from "./components/pages/index.vue";
+import PasantiasList from "./components/pages/admin/PasantiasList.vue";
+import UsuarioAlumnoForm from "./components/pages/admin/UserList.vue";
 
 axios.defaults.baseURL = process.env.VUE_APP_API_URL;
 /*axios.interceptors.request.use(function (config) {
@@ -42,6 +44,8 @@ const router = createRouter({
     { path: "/GetForo", component: ForoGet},
     { path: "/PostForo", component: PostForo},
     { path: "/ForosEdit", component: ForosEdicion},
+    { path: "/ListaPas", component: PasantiasList},
+    { path: "/ListaUs", component: UsuarioAlumnoForm},
     // Nueva ruta para el DashboardAdmin
   ],
 });
