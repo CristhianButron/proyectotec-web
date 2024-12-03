@@ -15,6 +15,8 @@ import UsuariosList from "./components/pages/usuarios/UsuariosList";
 import UsuariosCreate from "./components/pages/usuarios/UsuariosCreate";
 import UsuariosEdit from "./components/pages/usuarios/UsuariosEdit";
 import ForoGet from "./components/pages/Foro/ForosPage.vue";
+import PostForo from "./components/pages/Foro/PostForo.vue";
+import ForosEdicion from "./components/pages/Foro/ForosEdicion.vue";
 
 axios.defaults.baseURL = process.env.VUE_APP_API_URL;
 /*axios.interceptors.request.use(function (config) {
@@ -34,6 +36,8 @@ const router = createRouter({
     { path: "/usuarios/create", component: UsuariosCreate},
     { path: "/usuarios/edit/:id", component: UsuariosEdit},
     { path: "/GetForo", component: ForoGet},
+    { path: "/PostForo", component: PostForo},
+    { path: "/ForosEdit", component: ForosEdicion},
     // Nueva ruta para el DashboardAdmin
   ],
 });

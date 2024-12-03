@@ -1,4 +1,37 @@
 <template>
+      
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class="container-fluid">
+        <router-link class="navbar-brand" to="/">Inicio</router-link>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <router-link class="nav-link" to="/GetForo">Foros</router-link>
+            </li>
+            <li class="nav-item">
+              <router-link class="nav-link" to="/PostForo">Crear Foro</router-link>
+            </li>
+            <li class="nav-item">
+              <router-link class="nav-link" to="/ForosEdit">Editar Foros</router-link>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Foros Page Content -->
+    
     <div class="post-foro-page">
       <h1 class="title">Crear Foro</h1>
   
@@ -22,7 +55,6 @@
           </div>
 
   
-          <button type="submit" class="btn btn-primary">Crear Foro</button>
           <button type="submit" class="btn btn-primary">Crear Foro</button>
         </form>
       </div>
@@ -49,11 +81,12 @@
         try {
           // Enviar solicitud POST a la API
           const response = await requestHandler.postRequest('/api/foros', this.foro);
+          console.log(response);
           this.$router.push({ name: 'ForosList' }); // Redirigir al listado de foros (si está implementado)
-          alert('Foro creado exitosamente');
+          
         } catch (error) {
           console.error('Error al crear foro:', error);
-          alert('Hubo un error al crear el foro');
+          
         }
       },
     },
@@ -61,6 +94,25 @@
   </script>
   
   <style scoped>
+
+.navbar {
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.navbar .navbar-brand {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.navbar-nav .nav-link {
+  font-size: 1.1rem;
+  padding: 10px 15px;
+}
+
+.navbar-nav .nav-link:hover {
+  background-color: #e9ecef;
+}
+
   .post-foro-page {
     max-width: 600px;
     margin: 0 auto;
