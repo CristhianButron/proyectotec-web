@@ -1,4 +1,5 @@
 import express from 'express';
+import cors from 'cors';
 import swaggerApp from './swagger.js';
 import usuarioRoutes from './router/usuarioRouter.js';
 import alumnoRoutes from './router/alumnoRouter.js'; 
@@ -14,6 +15,7 @@ import { checkDatabaseConnection } from './config/database.js';
 
 const app = express();
 const port = 3000;
+app.use(cors());
 
 app.use(express.json());
 app.use('/api', usuarioRoutes);
