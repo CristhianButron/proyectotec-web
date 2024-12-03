@@ -10,7 +10,7 @@ import inscripcionesForosRoutes from './router/inscripcionesForosRouter.js';
 import inscripcionesPasantiasRoutes from './router/inscripcionesPasantiasRouter.js';
 import graduadosRoutes from './router/graduadosRouter.js';
 import loginRoutes from './router/loginRouter.js';
-import cors from 'cors';
+//import cors from 'cors';
 import { checkDatabaseConnection } from './config/database.js';
 
 
