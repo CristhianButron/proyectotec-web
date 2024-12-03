@@ -9,14 +9,12 @@ import inscripcionesForosRoutes from './router/inscripcionesForosRouter.js';
 import inscripcionesPasantiasRoutes from './router/inscripcionesPasantiasRouter.js';
 import graduadosRoutes from './router/graduadosRouter.js';
 import loginRoutes from './router/loginRouter.js';
-import cookieParser from 'cookie-parser';
 import { checkDatabaseConnection } from './config/database.js';
 
 
 const app = express();
 const port = 3000;
 
-app.use(cookieParser());
 app.use(express.json());
 app.use('/api', usuarioRoutes);
 app.use('/api', alumnoRoutes); 
