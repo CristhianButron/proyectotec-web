@@ -29,9 +29,6 @@
               <router-link class="nav-link" to="/foros">Foros</router-link>
             </li>
             <li class="nav-item">
-              <router-link class="nav-link" to="/pasantias">Pasantías</router-link>
-            </li>
-            <li class="nav-item">
               <router-link class="nav-link" to="/graduados">Graduados</router-link>
             </li>
           </ul>

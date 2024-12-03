@@ -1,9 +1,11 @@
 <template>
+  <div>
+    <NavbarComponent />
     <div class="homepage vh-100 d-flex flex-column justify-content-center align-items-center">
       <!-- Hero Section -->
       <div class="container text-center mb-5">
         <h1 class="display-4 text-light fw-bold animate-text">
-          Innovación Empresarial
+          Ingenieria en Innovación Empresarial
         </h1>
         <p class="lead text-light mb-4">
           La plataforma que conecta estudiantes, graduados y oportunidades.
@@ -59,71 +61,76 @@
         </div>
       </div>
     </div>
-  </template>
-  
-  <script>
-  export default {
-    name: 'HomePage',
-  };
-  </script>
-  
-  <style scoped>
-  /* Fondo animado */
-  .homepage {
-    background: linear-gradient(135deg, rgba(106, 17, 203, 0.7), rgba(37, 117, 252, 0.7));
-    background-size: 400% 400%;
-    animation: gradientBG 8s ease infinite;
+  </div>
+</template>
+
+<script>
+import NavbarComponent from '@/components/NavbarComponent.vue';
+
+export default {
+  name: 'HomePage',
+  components: {
+    NavbarComponent,
+  },
+};
+</script>
+
+<style scoped>
+/* Fondo animado */
+.homepage {
+  background: linear-gradient(135deg, rgba(106, 17, 203, 0.7), rgba(37, 117, 252, 0.7));
+  background-size: 400% 400%;
+  animation: gradientBG 8s ease infinite;
+}
+
+/* Hero Section */
+.animate-text {
+  animation: fadeIn 1.5s ease-in-out;
+}
+
+/* Glass Effect */
+.glass-card {
+  backdrop-filter: blur(10px);
+  background: rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 15px;
+  transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.glass-card:hover {
+  background: rgba(255, 255, 255, 0.25);
+  transform: translateY(-5px);
+}
+
+/* Botones */
+.btn-glass-hover {
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.btn-glass-hover:hover {
+  transform: scale(1.05);
+}
+
+@keyframes gradientBG {
+  0% {
+    background-position: 0% 50%;
   }
-  
-  /* Hero Section */
-  .animate-text {
-    animation: fadeIn 1.5s ease-in-out;
+  50% {
+    background-position: 100% 50%;
   }
-  
-  /* Glass Effect */
-  .glass-card {
-    backdrop-filter: blur(10px);
-    background: rgba(255, 255, 255, 0.15);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    border-radius: 15px;
-    transition: transform 0.3s ease, background 0.3s ease;
+  100% {
+    background-position: 0% 50%;
   }
-  
-  .glass-card:hover {
-    background: rgba(255, 255, 255, 0.25);
-    transform: translateY(-5px);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
   }
-  
-  /* Botones */
-  .btn-glass-hover {
-    transition: background 0.3s ease, transform 0.3s ease;
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
-  
-  .btn-glass-hover:hover {
-    transform: scale(1.05);
-  }
-  
-  @keyframes gradientBG {
-    0% {
-      background-position: 0% 50%;
-    }
-    50% {
-      background-position: 100% 50%;
-    }
-    100% {
-      background-position: 0% 50%;
-    }
-  }
-  
-  @keyframes fadeIn {
-    from {
-      opacity: 0;
-      transform: translateY(-20px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-  </style>
-        
+}
+</style>

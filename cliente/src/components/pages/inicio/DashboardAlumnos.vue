@@ -8,16 +8,7 @@
     >
       <h4 class="text-center mb-4">Menú</h4>
       <ul class="nav flex-column">
-        <li class="nav-item">
-          <router-link class="nav-link text-white" to="/graduados/list">
-            <i class="bi bi-person"></i> Graduados
-          </router-link>
-        </li>
-        <li class="nav-item">
-          <router-link class="nav-link text-white" to="/usuarios/list">
-            <i class="bi bi-people"></i> Usuarios
-          </router-link>
-        </li>
+       
         <li class="nav-item">
           <router-link class="nav-link text-white" to="/datos">
             <i class="bi bi-bar-chart"></i> Datos

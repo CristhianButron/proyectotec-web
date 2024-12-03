@@ -6,14 +6,8 @@ import "bootstrap/dist/css/bootstrap.css";
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 import 'bootstrap-icons/font/bootstrap-icons.css';
 import { createRouter, createWebHistory } from "vue-router";
-import GraduadoList from "./components/pages/graduados/GraduadoList";
-import GraduadoCreate from "./components/pages/graduados/GraduadoCreate";
-import GraduadoEdit from "./components/pages/graduados/GraduadoEdit";
-import GraduadoShow from "./components/pages/graduados/GraduadoShow";
 import DashboardAdmin from "./components/pages/inicio/DashboardAdmin";
-import UsuariosList from "./components/pages/usuarios/UsuariosList";
-import UsuariosCreate from "./components/pages/usuarios/UsuariosCreate";
-import UsuariosEdit from "./components/pages/usuarios/UsuariosEdit";
+import AlumnosDashboard from "./components/pages/inicio/DashboardAlumnos";
 import ForoGet from "./components/pages/Foro/ForosPage.vue";
 import PostForo from "./components/pages/Foro/PostForo.vue";
 import ForosEdicion from "./components/pages/Foro/ForosEdicion.vue";
@@ -49,19 +43,13 @@ const router = createRouter({
     // Lo demas equisde 
     { path: "/Inicio", component: index},
     { path: "/Foros-Start", component: ForosIndex },
-    { path: "/graduados/list", component: GraduadoList},
-    { path: "/graduados/create", component: GraduadoCreate },
-    { path: "/graduados/edit/:id", component: GraduadoEdit },
-    { path: "/graduados/show/:id", component: GraduadoShow },
-    { path: "/usuarios/list", component: UsuariosList},
-    { path: "/usuarios/create", component: UsuariosCreate},
-    { path: "/usuarios/edit/:id", component: UsuariosEdit},
     { path: "/GetForo", component: ForoGet},
     { path: "/PostForo", component: PostForo},
     { path: "/ForosEdit", component: ForosEdicion},
     { path: "/ListaPas", component: PasantiasList},
     { path: "/ListaUs", component: UsuarioAlumnoForm},
     { path: "/admin", component: DashboardAdmin },
+    { path: "/alumno", component: AlumnosDashboard },
     // Nueva ruta para el DashboardAdmin
   ],
 });
