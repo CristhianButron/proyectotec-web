@@ -1,8 +1,9 @@
 <template>
-  <div class="d-flex vh-100">
+  <div class="d-flex flex-column flex-lg-row vh-100">
     <!-- Sidebar -->
-    <div
-      :class="['sidebar', 'bg-dark', 'text-white', 'p-3', toggleSidebar ? 'd-none' : 'd-block']"
+    <nav
+      class="sidebar bg-dark text-white p-3 flex-shrink-0"
+      :class="{ 'd-none': toggleSidebar }"
       style="width: 250px;"
     >
       <h4 class="text-center mb-4">Menú</h4>
@@ -29,51 +30,61 @@
         </li>
         <li class="nav-item">
           <router-link class="nav-link text-white" to="/Foros-Start">
-            <i class="bi bi-bar-chart"></i> Foros
+            <i class="bi bi-chat-left-text"></i> Foros
+          </router-link>
+        </li>
+        <li class="nav-item">
+          <router-link class="nav-link text-white" to="/pasantias">
+            <i class="bi bi-briefcase-fill"></i> Pasantías
           </router-link>
         </li>
       </ul>
-    </div>
+    </nav>
 
     <!-- Main Content -->
     <div class="flex-grow-1">
       <!-- Navbar -->
-      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <header class="navbar navbar-expand-lg navbar-light bg-light shadow-sm">
         <div class="container-fluid">
           <!-- Toggle Button -->
           <button
-            class="btn btn-outline-primary me-3"
+            class="btn btn-outline-primary me-3 d-lg-none"
             @click="toggleSidebar = !toggleSidebar"
           >
             <i class="bi bi-list"></i>
           </button>
-          <span class="navbar-brand">Bienvenido</span>
+          <span class="navbar-brand">Administrador</span>
 
           <!-- Perfil -->
-          <div class="d-flex align-items-center ms-auto">
-            <i class="bi bi-person-circle fs-4 me-3"></i>
-            <div class="dropdown">
-              <button
-                class="btn btn-outline-secondary dropdown-toggle"
-                type="button"
-                data-bs-toggle="dropdown"
-                aria-expanded="false"
-              >
-                Perfil
-              </button>
-              <ul class="dropdown-menu dropdown-menu-end">
-                <li><router-link class="dropdown-item" to="/dashboard/editar-perfil">Editar Perfil</router-link></li>
-                <li><router-link class="dropdown-item" to="/logout">Logout</router-link></li>
-              </ul>
-            </div>
+          <div class="dropdown ms-auto">
+            <button
+              class="btn btn-outline-secondary dropdown-toggle"
+              type="button"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+            >
+              Perfil
+            </button>
+            <ul class="dropdown-menu dropdown-menu-end">
+              <li>
+                <router-link class="dropdown-item" to="/dashboard/editar-perfil">
+                  Editar Perfil
+                </router-link>
+              </li>
+              <li>
+                <router-link class="dropdown-item" to="/logout">
+                  Logout
+                </router-link>
+              </li>
+            </ul>
           </div>
         </div>
-      </nav>
+      </header>
 
       <!-- Content Area -->
-      <div class="p-4">
+      <main class="p-4">
         <router-view></router-view>
-      </div>
+      </main>
     </div>
   </div>
 </template>
@@ -82,7 +93,7 @@
 export default {
   data() {
     return {
-      toggleSidebar: false, // Estado inicial del sidebar
+      toggleSidebar: false, // Controla si el sidebar está oculto
     };
   },
 };
@@ -90,10 +101,13 @@ export default {
 
 <style scoped>
 .sidebar {
-  transition: all 0.3s ease; /* Animación suave */
+  transition: all 0.3s ease;
+  height: 100%; /* Asegura que ocupe toda la altura de la ventana */
 }
-
-.navbar {
-  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+.nav-link {
+  transition: background-color 0.2s;
+}
+.nav-link:hover {
+  background-color: rgba(255, 255, 255, 0.1);
 }
 </style>

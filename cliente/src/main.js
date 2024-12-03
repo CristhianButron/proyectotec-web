@@ -21,6 +21,13 @@ import ForosIndex from "./components/pages/Foro/ForosIndex.vue";
 import index from "./components/pages/index.vue";
 import PasantiasList from "./components/pages/admin/PasantiasList.vue";
 import UsuarioAlumnoForm from "./components/pages/admin/UserList.vue";
+// Pagina Principal
+import HomePage from "./views/HomePage.vue";
+import LoginPage from "./views/LoginPage.vue";
+import RegistroPage from "./views/RegistroPage.vue";
+import ForosPage from "./views/ForosPage.vue";
+import PasantiasPage from "./views/PasantiasPage.vue";
+import GraduadosPage from "./views/GraduadosPage.vue";
 
 axios.defaults.baseURL = process.env.VUE_APP_API_URL;
 /*axios.interceptors.request.use(function (config) {
@@ -31,7 +38,15 @@ axios.defaults.baseURL = process.env.VUE_APP_API_URL;
 const router = createRouter({
   history: createWebHistory(),
   routes: [
-    { path: "/", component: DashboardAdmin },
+    // Pagina Principal
+    { path: "/", component: HomePage },
+    { path: "/login", component: LoginPage },
+    { path: "/registro", component: RegistroPage },
+    { path: "/foros", component: ForosPage },
+    { path: "/pasantias", component: PasantiasPage },
+    { path: "/graduados", component: GraduadosPage },
+
+    // Lo demas equisde 
     { path: "/Inicio", component: index},
     { path: "/Foros-Start", component: ForosIndex },
     { path: "/graduados/list", component: GraduadoList},
@@ -46,6 +61,7 @@ const router = createRouter({
     { path: "/ForosEdit", component: ForosEdicion},
     { path: "/ListaPas", component: PasantiasList},
     { path: "/ListaUs", component: UsuarioAlumnoForm},
+    { path: "/admin", component: DashboardAdmin },
     // Nueva ruta para el DashboardAdmin
   ],
 });
