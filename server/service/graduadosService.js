@@ -1,33 +1,21 @@
-import pool from '../config/database.js'; // Asegúrate de que la conexión a la base de datos esté configurada correctamente
+import Graduados from '../models/Graduados.js';
 
 export const getGraduados = async () => {
-    const result = await pool.query('SELECT * FROM graduados');
-    return result.rows;
+  return await Graduados.query();
 };
 
 export const getGraduadoById = async (id) => {
-    const result = await pool.query('SELECT * FROM graduados WHERE idgraduados = $1', [id]);
-    return result.rows[0];
+  return await Graduados.query().findById(id);
 };
 
 export const createGraduado = async (data) => {
-    const { fecha_graduacion, alumno_idalumno } = data;
-    const result = await pool.query(
-        'INSERT INTO graduados (fecha_graduacion, alumno_idalumno) VALUES ($1, $2) RETURNING *',
-        [fecha_graduacion, alumno_idalumno]
-    );
-    return result.rows[0];
+  return await Graduados.query().insert(data);
 };
 
 export const updateGraduado = async (id, data) => {
-    const { fecha_graduacion, alumno_idalumno } = data;
-    const result = await pool.query(
-        'UPDATE graduados SET fecha_graduacion = $1, alumno_idalumno = $2 WHERE idgraduados = $3 RETURNING *',
-        [fecha_graduacion, alumno_idalumno, id]
-    );
-    return result.rows[0];
+  return await Graduados.query().patchAndFetchById(id, data);
 };
 
 export const deleteGraduado = async (id) => {
-    await pool.query('DELETE FROM graduados WHERE idgraduados = $1', [id]);
+  return await Graduados.query().deleteById(id);
 };

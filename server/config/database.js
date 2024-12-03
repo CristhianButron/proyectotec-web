@@ -1,22 +1,18 @@
-import pg from 'pg';
+import Knex from 'knex';
+import { Model } from 'objection';
+import knexConfig from '../knexfile.js'; 
 
-const pool = new pg.Pool({
-    user: process.env.DB_USER || 'postgres',
-    host: process.env.DB_HOST || 'localhost',
-    database: process.env.DB_NAME || 'sistema_innovacionempresarial',
-    password: process.env.DB_PASSWORD || '1234',
-    port: process.env.DB_PORT || 5432
-});
+const knex = Knex(knexConfig[process.env.NODE_ENV || 'development']);
+Model.knex(knex);
 
 export const checkDatabaseConnection = async () => {
-        
     try {
-        const client = await pool.connect();
-        console.log('Connected to the database');
-        client.release();
+      await knex.raw('SELECT 1+1 AS result');
+      console.log('Database connection successful');
     } catch (error) {
-        console.error('Failed to connect to the database', error);
+      console.error('Database connection failed:', error.message);
+      throw error;
     }
-};
+  };
 
-export default pool;
+export default knex;

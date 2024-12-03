@@ -1,49 +1,65 @@
-import { getAlumnos, getAlumnoById, createAlumno, updateAlumno, deleteAlumno } from '../service/alumnoService.js';
-
-export const getAlumnosController = async (req, res) => {
+import {
+    getAlumnos,
+    getAlumnoById,
+    createAlumno,
+    updateAlumno,
+    deleteAlumno,
+  } from '../service/alumnoService.js';
+  
+  export const getAlumnosController = async (req, res) => {
     try {
-        const alumnos = await getAlumnos();
-        res.status(200).json(alumnos);
+      const alumnos = await getAlumnos();
+      res.status(200).json(alumnos);
     } catch (error) {
-        res.status(500).json({ message: 'Error retrieving alumnos', error });
+      res.status(500).json({ message: 'Error retrieving alumnos', error: error.message });
     }
-};
-
-export const getAlumnoByIdController = async (req, res) => {
+  };
+  
+  export const getAlumnoByIdController = async (req, res) => {
     try {
-        const { id } = req.params;
-        const alumno = await getAlumnoById(id);
-        res.status(200).json(alumno);
+      const { id } = req.params;
+      const alumno = await getAlumnoById(id);
+      if (!alumno) {
+        return res.status(404).json({ message: 'Alumno not found' });
+      }
+      res.status(200).json(alumno);
     } catch (error) {
-        res.status(500).json({ message: 'Error retrieving alumno', error });
+      res.status(500).json({ message: 'Error retrieving alumno', error: error.message });
     }
-};
-
-export const createAlumnoController = async (req, res) => {
+  };
+  
+  export const createAlumnoController = async (req, res) => {
     try {
-        const nuevoAlumno = await createAlumno(req.body);
-        res.status(201).json(nuevoAlumno);
+      const nuevoAlumno = await createAlumno(req.body);
+      res.status(201).json(nuevoAlumno);
     } catch (error) {
-        res.status(500).json({ message: 'Error creating alumno', error });
+      res.status(500).json({ message: 'Error creating alumno', error: error.message });
     }
-};
-
-export const updateAlumnoController = async (req, res) => {
+  };
+  
+  export const updateAlumnoController = async (req, res) => {
     try {
-        const { id } = req.params;
-        const alumnoActualizado = await updateAlumno(id, req.body);
-        res.status(200).json(alumnoActualizado);
+      const { id } = req.params;
+      const alumnoActualizado = await updateAlumno(id, req.body);
+      if (!alumnoActualizado) {
+        return res.status(404).json({ message: 'Alumno not found' });
+      }
+      res.status(200).json(alumnoActualizado);
     } catch (error) {
-        res.status(500).json({ message: 'Error updating alumno', error });
+      res.status(500).json({ message: 'Error updating alumno', error: error.message });
     }
-};
-
-export const deleteAlumnoController = async (req, res) => {
+  };
+  
+  export const deleteAlumnoController = async (req, res) => {
     try {
-        const { id } = req.params;
-        await deleteAlumno(id);
-        res.status(200).json({ message: 'Alumno eliminado' });
+      const { id } = req.params;
+      const deletedAlumno = await deleteAlumno(id);
+      if (!deletedAlumno) {
+        return res.status(404).json({ message: 'Alumno not found' });
+      }
+      res.status(200).json({ message: 'Alumno eliminado' });
     } catch (error) {
-        res.status(500).json({ message: 'Error deleting alumno', error });
+      res.status(500).json({ message: 'Error deleting alumno', error: error.message });
     }
-};
+  };
+  

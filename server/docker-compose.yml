@@ -15,8 +15,10 @@ services:
       - DB_NAME=sistema_innovacionempresarial
     depends_on:
       - postgres-db
+    #command: >
+    #  sh -c "npm run dev"  
     command: >
-      npm run dev
+      sh -c "npx knex migrate:latest && npm run dev"
 
   postgres-db:
     image: postgres:15
