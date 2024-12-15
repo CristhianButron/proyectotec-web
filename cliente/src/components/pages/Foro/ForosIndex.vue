@@ -3,8 +3,8 @@
       <!-- Background Image Section -->
       <div class="hero-section">
         <div class="overlay">
-          <h1>Bienvenidos a la App de Mascotas</h1>
-          <p class="description">Encuentra mascotas perdidas cerca de ti y ayuda a reunirte con ellas.</p>
+          <h1>Bienvenidos al apartado de foros</h1>
+          <p class="description">Encuentra el foro que mas te emocione y unete.</p>
           <div class="cta-buttons">
             <router-link to="/GetForo" class="btn btn-primary">Ver Foros</router-link>
             <router-link to="/PostForo" class="btn btn-secondary">Crear Foro</router-link>
@@ -18,8 +18,8 @@
         <div class="features-container">
           <div class="feature">
             <i class="fas fa-search fa-3x"></i>
-            <h3>Buscar Mascotas</h3>
-            <p>Usa la geolocalización para encontrar mascotas perdidas cerca de ti.</p>
+            <h3>Buscar Foros</h3>
+            <p>Usa todo tipo de foros publicados para la carrera.</p>
           </div>
           <div class="feature">
             <i class="fas fa-plus fa-3x"></i>
@@ -29,15 +29,11 @@
           <div class="feature">
             <i class="fas fa-users fa-3x"></i>
             <h3>Conecta con Otros</h3>
-            <p>Únete a la comunidad y ayuda a más personas a encontrar a sus mascotas.</p>
+            <p>Únete a la comunidad y ayuda a más personas.</p>
           </div>
         </div>
       </div>
   
-      <!-- Footer Section -->
-      <footer class="footer">
-        <p>&copy; 2024 Mascotas Finder. Todos los derechos reservados.</p>
-      </footer>
     </div>
   </template>
   

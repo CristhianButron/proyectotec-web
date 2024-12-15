@@ -112,7 +112,7 @@ export default {
           rol: 'alumno'
         });
         console.log('Usuario registrado:', response.data);
-        this.router.push('/dashboard');
+        this.router.push('/admin');
       } catch (error) {
         console.error('Error:', error);
         // Manejar el error

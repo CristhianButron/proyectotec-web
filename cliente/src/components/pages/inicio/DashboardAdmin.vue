@@ -14,7 +14,7 @@
           </router-link>
         </li>
         <li class="nav-item">
-          <router-link class="nav-link text-white" to="/usuarios/list">
+          <router-link class="nav-link text-white" to="/ListaUs">
             <i class="bi bi-people"></i> Usuarios
           </router-link>
         </li>
@@ -29,7 +29,7 @@
           </router-link>
         </li>
         <li class="nav-item">
-          <router-link class="nav-link text-white" to="/pasantias">
+          <router-link class="nav-link text-white" to="/ListaPas">
             <i class="bi bi-briefcase-fill"></i> Pasantías
           </router-link>
         </li>

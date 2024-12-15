@@ -15,6 +15,7 @@ import ForosIndex from "./components/pages/Foro/ForosIndex.vue";
 import index from "./components/pages/index.vue";
 import PasantiasList from "./components/pages/admin/PasantiasList.vue";
 import UsuarioAlumnoForm from "./components/pages/admin/UserList.vue";
+import GraduadosList from "./components/pages/admin/GraduadosList.vue";
 // Pagina Principal
 import HomePage from "./views/HomePage.vue";
 import LoginPage from "./views/LoginPage.vue";
@@ -38,7 +39,9 @@ const router = createRouter({
     { path: "/registro", component: RegistroPage },
     { path: "/foros", component: ForosPage },
     { path: "/pasantias", component: PasantiasPage },
-    { path: "/graduados", component: GraduadosPage },
+    { path: "/graduados/list", component: GraduadosList },
+    { path: "/graduados" , component: GraduadosPage},
+    
 
     // Lo demas equisde 
     { path: "/Inicio", component: index},
