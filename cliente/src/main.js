@@ -16,6 +16,9 @@ import index from "./components/pages/index.vue";
 import PasantiasList from "./components/pages/admin/PasantiasList.vue";
 import UsuarioAlumnoForm from "./components/pages/admin/UserList.vue";
 import GraduadosList from "./components/pages/admin/GraduadosList.vue";
+import ForosAlumno from "./components/pages/Foro/ForosAlumno.vue";
+import ForoGetAlumno from "./components/pages/Foro/ForosAlumnosPage.vue";
+import PasantiasAlumno from "./components/pages/admin/PasantiasAlumno.vue";
 // Pagina Principal
 import HomePage from "./views/HomePage.vue";
 import LoginPage from "./views/LoginPage.vue";
@@ -41,6 +44,9 @@ const router = createRouter({
     { path: "/pasantias", component: PasantiasPage },
     { path: "/graduados/list", component: GraduadosList },
     { path: "/graduados" , component: GraduadosPage},
+    { path: "/ForosAlumno", component: ForosAlumno},
+    { path: "/GetForoAlumno", component: ForoGetAlumno},
+    { path:"/PasantiasAlumno", component: PasantiasAlumno},
     
 
     // Lo demas equisde 

@@ -10,17 +10,17 @@
       <ul class="nav flex-column">
        
         <li class="nav-item">
-          <router-link class="nav-link text-white" to="/datos">
-            <i class="bi bi-bar-chart"></i> Datos
+          <router-link class="nav-link text-white" to="/graduados">
+            <i class="bi bi-bar-chart"></i> Graduados
           </router-link>
         </li>
         <li class="nav-item">
-          <router-link class="nav-link text-white" to="/Foros-Start">
+          <router-link class="nav-link text-white" to="/ForosAlumno">
             <i class="bi bi-chat-left-text"></i> Foros
           </router-link>
         </li>
         <li class="nav-item">
-          <router-link class="nav-link text-white" to="/pasantias">
+          <router-link class="nav-link text-white" to="/pasantiasAlumno">
             <i class="bi bi-briefcase-fill"></i> Pasantías
           </router-link>
         </li>
@@ -39,7 +39,7 @@
           >
             <i class="bi bi-list"></i>
           </button>
-          <span class="navbar-brand">Administrador</span>
+          <span class="navbar-brand">Alumno</span>
 
           <!-- Perfil -->
           <div class="dropdown ms-auto">
